@@ -8,7 +8,7 @@ import path from "path";
 import axios from 'axios';
 
 
-// Load environment variables
+// Load environment variables well
 dotenv.config();
 
 const PORT = 3000;
