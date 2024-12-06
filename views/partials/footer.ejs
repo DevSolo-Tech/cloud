@@ -1,0 +1,146 @@
+<footer class="site-footer">
+    <div class="footer-content">
+        <!-- Main Footer -->
+        <div class="footer-main">
+            <!-- Company Info -->
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-film"></i>
+                    <span>MovieCritic</span>
+                </div>
+                <p class="footer-description">
+                    <i class="fas fa-quote-left"></i>
+                    Your ultimate destination for movie reviews, ratings, and cinematic discussions.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Follow us on Facebook" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Follow us on Twitter" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" aria-label="Follow us on Instagram" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="Subscribe to our YouTube" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" aria-label="Join our Discord" title="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-video"></i>
+                        <a href="{{ url_for('movies') }}">Movies</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-star"></i>
+                        <a href="{{ url_for('reviews') }}">Reviews</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-list"></i>
+                        <a href="{{ url_for('categories') }}">Categories</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-trophy"></i>
+                        <a href="{{ url_for('top_rated') }}">Top Rated</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Support -->
+            <div class="footer-section">
+                <h3><i class="fas fa-headset"></i> Support</h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-question-circle"></i>
+                        <a href="{{ url_for('help') }}">Help Center</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="{{ url_for('contact') }}">Contact Us</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-info-circle"></i>
+                        <a href="{{ url_for('faq') }}">FAQ</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-comment-dots"></i>
+                        <a href="{{ url_for('feedback') }}">Feedback</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-section">
+                <h3><i class="fas fa-envelope-open-text"></i> Stay Updated</h3>
+                <p>
+                    <i class="fas fa-bell"></i>
+                    Subscribe to our newsletter for the latest movie reviews and updates.
+                </p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-at"></i>
+                            <input type="email" 
+                                   placeholder="Enter your email" 
+                                   required 
+                                   aria-label="Email for newsletter">
+                        </div>
+                        <button type="submit" aria-label="Subscribe">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sub Footer -->
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <a href="{{ url_for('privacy') }}">
+                    <i class="fas fa-shield-alt"></i> Privacy Policy
+                </a>
+                <a href="{{ url_for('terms') }}">
+                    <i class="fas fa-file-contract"></i> Terms of Service
+                </a>
+                <a href="{{ url_for('cookies') }}">
+                    <i class="fas fa-cookie-bite"></i> Cookie Policy
+                </a>
+            </div>
+            <div class="footer-copyright">
+                <p>
+                    <i class="far fa-copyright"></i>
+                    <span id="current-year"></span> MovieCritic. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top" title="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+</footer>
+
+<!-- Loading Animation -->
+<div id="loading-spinner" class="loading-spinner" style="display: none;">
+    <i class="fas fa-circle-notch fa-spin"></i>
+</div>
+
+<!-- Toast Container for Notifications -->
+<div id="toast-container" class="toast-container"></div>
+
+<!-- At the end of your body tag -->
+<link rel="stylesheet" href="/footer.css">`
+<script src="../js/footer.js"></script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      

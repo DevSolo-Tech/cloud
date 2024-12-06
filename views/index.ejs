@@ -1,0 +1,404 @@
+<link rel="stylesheet" href="home.css">
+
+<%- include('partials/header') %> 
+
+<section class="slideshow">
+
+    <div class="slideshow-container">
+      <div class="slide">
+        <img src="/images/beauty-black.avif" alt="Slide 1">
+        <div class="slide-caption">
+          <h3>Beauty In Black</h3>
+          <p>Tyler Perry's New hot tv show on Netflix</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="/images/canary-black.jpg" alt="Slide 2">
+        <div class="slide-caption">
+          <h3>Canary Black</h3>
+          <p>Man hunt rises over loss of child</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="/images/cross.jpg" alt="Slide 3">
+        <div class="slide-caption">
+          <h3>Cross</h3>
+          <p>Another black man from the hood calling shots.</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="/images/terminator-zero.jpg" alt="Slide 3">
+        <div class="slide-caption">
+          <h3>Terminator Zero</h3>
+          <p>This is where everyone dies.</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="/images/rebel-ridge.jpg" alt="Slide 3">
+        <div class="slide-caption">
+          <h3>Rebel Ridge</h3>
+          <p>Fighting for the rights of a black man</p>
+        </div>
+      </div>
+      <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+      <a class="next" onclick="moveSlide(1)">&#10095;</a>
+    </div>
+  </section>
+
+  <section class="popular-celebrities">
+    <div class="section-header">
+      <h2 onclick="showAllCelebrities()">Most popular celebrities <span class="arrow">›</span></h2>
+    </div>
+    
+    <div class="celebrities-wrapper">
+      <button class="celebrity-nav prev-celebrity">‹</button>
+      <div class="celebrities-container">
+        <div class="celebrity-card">
+          <div class="celebrity-image">
+            <img src="/images/rebel-ridge.jpg" alt="Dawn Struthers">
+          </div>
+          <div class="celebrity-info">
+            <span class="rank">11</span>
+            <span class="trend up">↑ 8</span>
+            <h3>Dawn Struthers</h3>
+          </div>
+        </div>
+
+        <div class="celebrity-card">
+          <div class="celebrity-image">
+            <img src="/images/rebel-ridge.jpg" alt="Dawn Struthers">
+          </div>
+          <div class="celebrity-info">
+            <span class="rank">11</span>
+            <span class="trend up">↑ 8</span>
+            <h3>Dawn Struthers</h3>
+          </div>
+        </div>
+
+        <div class="celebrity-card">
+          <div class="celebrity-image">
+            <img src="/images/rebel-ridge.jpg" alt="Dawn Struthers">
+          </div>
+          <div class="celebrity-info">
+            <span class="rank">11</span>
+            <span class="trend up">↑ 8</span>
+            <h3>Dawn Struthers</h3>
+          </div>
+        </div>
+
+        <div class="celebrity-card">
+          <div class="celebrity-image">
+            <img src="/images/rebel-ridge.jpg" alt="Dawn Struthers">
+          </div>
+          <div class="celebrity-info">
+            <span class="rank">11</span>
+            <span class="trend up">↑ 8</span>
+            <h3>Dawn Struthers</h3>
+          </div>
+        </div>
+
+        <div class="celebrity-card">
+          <div class="celebrity-image">
+            <img src="/images/rebel-ridge.jpg" alt="Dawn Struthers">
+          </div>
+          <div class="celebrity-info">
+            <span class="rank">11</span>
+            <span class="trend up">↑ 8</span>
+            <h3>Dawn Struthers</h3>
+          </div>
+        </div>
+
+        <div class="celebrity-card">
+          <div class="celebrity-image">
+            <img src="/images/rebel-ridge.jpg" alt="Dawn Struthers">
+          </div>
+          <div class="celebrity-info">
+            <span class="rank">11</span>
+            <span class="trend up">↑ 8</span>
+            <h3>Dawn Struthers</h3>
+          </div>
+        </div>
+
+        <div class="celebrity-card">
+          <div class="celebrity-image">
+            <img src="/images/rebel-ridge.jpg" alt="Dawn Struthers">
+          </div>
+          <div class="celebrity-info">
+            <span class="rank">11</span>
+            <span class="trend up">↑ 8</span>
+            <h3>Dawn Struthers</h3>
+          </div>
+        </div>
+
+        <div class="celebrity-card">
+          <div class="celebrity-image">
+            <img src="/images/rebel-ridge.jpg" alt="Dawn Struthers">
+          </div>
+          <div class="celebrity-info">
+            <span class="rank">11</span>
+            <span class="trend up">↑ 8</span>
+            <h3>Dawn Struthers</h3>
+          </div>
+        </div>
+
+        <div class="celebrity-card">
+          <div class="celebrity-image">
+            <img src="/images/terminator-zero.jpg" alt="Cristin Milioti">
+          </div>
+          <div class="celebrity-info">
+            <span class="rank">12</span>
+            <span class="trend up">↑ 9</span>
+            <h3>Cristin Milioti</h3>
+          </div>
+        </div>
+      </div>
+      <button class="celebrity-nav next-celebrity">›</button>
+    </div>
+  </section>
+
+  <section class="movie-section">
+    <div class="movie-header">
+      <h2>Featured Movie</h2>
+      <p class="movie-intro">Catch the latest trailers and share your thoughts about the movie with our community.</p>
+    </div>
+    <div class="movie-content">
+      <div class="movie-video">
+        <iframe id="trailer-frame"
+          src="" 
+          frameborder="0" 
+          allowfullscreen
+        ></iframe>
+        <h1 id="trailer-title"></h1>
+        <p class="movie-description" id="trailer-description"></p>
+      </div>
+
+      <div class="movie-reviews">
+        <div class="reviews">
+          <h3>User Reviews</h3>
+          <ul class="review-list" id="review-list">
+            <!-- Reviews will be populated dynamically -->
+          </ul>
+        </div>
+
+        <div class="add-review">
+          <h3>Add Your Review</h3>
+          <textarea placeholder="Write your review here..." class="review-input" id="review-input"></textarea>
+          <button class="review-button" id="submit-review">Submit Review</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <%- include('partials/footer') %> 
+ 
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
+    let interval;
+  
+    const startSlideshow = () => {
+      interval = setInterval(() => {
+        moveSlide(1);
+      }, 5000);
+    };
+  
+    const stopSlideshow = () => clearInterval(interval);
+  
+    const moveSlide = (n) => {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + n + slides.length) % slides.length;
+      slides[currentIndex].classList.add('active');
+    };
+  
+    document.querySelector('.prev').addEventListener('click', (e) => {
+      e.preventDefault();
+      stopSlideshow();
+      moveSlide(-1);
+      startSlideshow();
+    });
+  
+    document.querySelector('.next').addEventListener('click', (e) => {
+      e.preventDefault();
+      stopSlideshow();
+      moveSlide(1);
+      startSlideshow();
+    });
+  
+    slides.forEach(slide => {
+      slide.addEventListener('mouseover', stopSlideshow);
+      slide.addEventListener('mouseout', startSlideshow);
+    });
+  
+    startSlideshow();
+    slides[0].classList.add('active');
+  
+    function showAllCelebrities() {
+      window.location.href = '/celebrities';
+    }
+  
+    const celebritiesHeader = document.querySelector('.section-header h2');
+    celebritiesHeader.style.cursor = 'pointer';
+  
+    celebritiesHeader.addEventListener('mouseenter', () => {
+      celebritiesHeader.querySelector('.arrow').style.transform = 'translateX(5px)';
+    });
+  
+    celebritiesHeader.addEventListener('mouseleave', () => {
+      celebritiesHeader.querySelector('.arrow').style.transform = 'translateX(0)';
+    });
+  
+    const celebritiesContainer = document.querySelector('.celebrities-container');
+    const prevButton = document.querySelector('.prev-celebrity');
+    const nextButton = document.querySelector('.next-celebrity');
+    const cardWidth = 240; // Width of each card (220px) + gap (20px)
+    const visibleCards = Math.floor(celebritiesContainer.clientWidth / cardWidth);
+  
+    let currentPosition = 0;
+    const totalCards = document.querySelectorAll('.celebrity-card').length;
+    const maxPosition = Math.max(0, totalCards - visibleCards);
+  
+    function updateNavigationButtons() {
+      prevButton.classList.toggle('disabled', currentPosition === 0);
+      nextButton.classList.toggle('disabled', currentPosition >= maxPosition);
+    }
+  
+    prevButton.addEventListener('click', () => {
+      if (currentPosition > 0) {
+        currentPosition--;
+        celebritiesContainer.scrollTo({
+          left: currentPosition * cardWidth,
+          behavior: 'smooth'
+        });
+        updateNavigationButtons();
+      }
+    });
+  
+    nextButton.addEventListener('click', () => {
+      if (currentPosition < maxPosition) {
+        currentPosition++;
+        celebritiesContainer.scrollTo({
+          left: currentPosition * cardWidth,
+          behavior: 'smooth'
+        });
+        updateNavigationButtons();
+      }
+    });
+  
+    // Add window resize handler to update visible cards calculation
+    window.addEventListener('resize', () => {
+      const newVisibleCards = Math.floor(celebritiesContainer.clientWidth / cardWidth);
+      if (newVisibleCards !== visibleCards) {
+        currentPosition = 0;
+        celebritiesContainer.scrollTo({ left: 0 });
+        updateNavigationButtons();
+      }
+    });
+  
+    // Initialize button states
+    updateNavigationButtons();
+  
+    // Optional: Add touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+  
+    celebritiesContainer.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+  
+    celebritiesContainer.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+  
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      const diff = touchStartX - touchEndX;
+  
+      if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+          // Swipe left
+          nextButton.click();
+        } else {
+          // Swipe right
+          prevButton.click();
+        }
+      }
+    }
+  
+    let currentTrailerId = null;
+  
+    // Fetch and display the featured trailer
+    async function loadFeaturedTrailer() {
+      try {
+        const response = await fetch('/api/featured-trailer');
+        const trailer = await response.json();
+        
+        currentTrailerId = trailer.id;
+        document.getElementById('trailer-frame').src = `https://www.youtube.com/embed/${trailer.youtube_id}`;
+        document.getElementById('trailer-title').textContent = trailer.title;
+        document.getElementById('trailer-description').textContent = trailer.description;
+        
+        loadReviews();
+      } catch (error) {
+        console.error('Error loading trailer:', error);
+      }
+    }
+  
+    // Load reviews for current trailer
+    async function loadReviews() {
+      try {
+        const response = await fetch(`/api/reviews/${currentTrailerId}`);
+        const reviews = await response.json();
+        
+        const reviewList = document.getElementById('review-list');
+        reviewList.innerHTML = reviews.map(review => `
+          <li><strong>${review.fullname}:</strong> ${review.review}</li>
+        `).join('');
+      } catch (error) {
+        console.error('Error loading reviews:', error);
+      }
+    }
+  
+    // Submit a new review
+    document.getElementById('submit-review').addEventListener('click', async () => {
+      const reviewText = document.getElementById('review-input').value.trim();
+      
+      if (!reviewText) {
+        alert('Please write a review before submitting');
+        return;
+      }
+      
+      try {
+        const response = await fetch('/api/reviews', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            trailerId: currentTrailerId,
+            review: reviewText
+          })
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok) {
+          document.getElementById('review-input').value = '';
+          loadReviews(); // Reload reviews after successful submission
+        } else {
+          alert(result.error);
+        }
+      } catch (error) {
+        console.error('Error submitting review:', error);
+        alert('Failed to submit review. Please try again.');
+      }
+    });
+  
+    // Load initial data
+    loadFeaturedTrailer();
+  </script>
+  
+  

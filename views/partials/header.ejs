@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MovieCritic - Discover and review your favorite movies">
+    <title>MovieCritic</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/header.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <!-- Logo -->
+            <div class="nav-left">
+                <a href="/home" class="logo-link">
+                    <i class="fas fa-film"></i>
+                    <span>MovieCritic</span>
+                </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="nav-center">
+                <div class="nav-links">
+                    <a href="/home" class="<%= req.originalUrl === '/home' ? 'active' : '' %>">
+                        <i class="fas fa-home"></i> 
+                        <span>Home</span>
+                    </a>
+                    <a href="/discover" class="<%= req.originalUrl === '/discover' ? 'active' : '' %>">
+                        <i class="fas fa-compass"></i> 
+                        <span>Discover</span>
+                    </a>
+                    <a href="/popular" class="<%= req.originalUrl === '/popular' ? 'active' : '' %>">
+                        <i class="fas fa-fire"></i> 
+                        <span>Popular</span>
+                    </a>
+                </div>                
+            </div>
+
+            <!-- Auth Section -->
+            <div class="nav-right">
+                <!-- Search Form -->
+                <div class="search-container">
+                    <form action="/search" method="GET" class="search-form">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" name="q" placeholder="Find movies..." aria-label="Search movies">
+                    </form>
+                </div>
+
+                <% if (user) { %>
+                    <!-- Logged-In User -->
+                    <div class="auth-welcome">
+                        <span>Welcome, <%= user.fullname %></span>
+                        <form action="/logout" method="POST" class="logout-form">
+                            <button type="submit" class="logout-btn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+                            </button>
+                        </form>
+                    </div>
+                <% } else { %>
+                    <!-- Guest User -->
+                    <div class="auth-buttons">
+                        <a href="/login" class="login-btn">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>Login</span>
+                        </a>
+                        <a href="/signup" class="register-btn">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Sign Up</span>
+                        </a>
+                    </div>
+                <% } %>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>

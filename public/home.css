@@ -1,0 +1,512 @@
+:root {
+    --primary-color: #e50914;
+    --secondary-color: #141414;
+    --text-color: #ffffff;
+    --background-dark: #000000;
+    --background-light: #232323;
+    --header-height: 65px;
+    --transition: 0.3s ease;
+}
+
+
+.slideshow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-light);
+    padding: 2rem 0;
+  }
+  
+  .slideshow-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  
+  .slide {
+    min-width: 100%;
+    transition: transform var(--transition);
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transform: translateX(100%);
+    height: 100%;
+  }
+  
+  .slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 1;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.7) 50%,
+        transparent 100%
+    );
+    color: white;
+    padding: 3rem 1rem 1.5rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .slide-caption h3 {
+    margin: 0 0 0.8rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    letter-spacing: 1px;
+  }
+  
+  .slide-caption p {
+    margin: 0;
+    font-size: 1.2rem;
+    opacity: 1;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .slide:hover img {
+    filter: brightness(0.8);
+  }
+  
+  .slide:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .slide:hover .slide-caption {
+    transform: translateY(-10px);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), transparent);
+  }
+  
+  @media (max-width: 768px) {
+    .slide-caption {
+        padding: 1.5rem 1rem 0.8rem;
+    }
+  
+    .slide-caption h3 {
+        font-size: 1.3rem;
+    }
+  
+    .slide-caption p {
+        font-size: 1rem;
+    }
+  }
+  
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    z-index: 2;
+  }
+  
+  .next {
+    right: 20px;
+  }
+  
+  .prev {
+    left: 20px;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 55px;
+    height: 55px;
+  }
+  
+  .popular-celebrities {
+    padding: 2rem 5%;
+    background-color: var(--background-light);
+  }
+  
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+  }
+  
+  .section-header h2:hover {
+    color: #007bff;
+  }
+  
+  .section-header .arrow {
+    color: var(--accent-color);
+    margin-left: 0.5rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  
+  .celebrities-wrapper {
+    position: relative;
+    padding: 0 40px;
+  }
+  
+  .celebrities-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 10px 0;
+  }
+  
+  .celebrity-card {
+    flex: 0 0 220px;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .celebrity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  
+  .celebrity-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    z-index: 2;
+  }
+  
+  .celebrity-nav:hover {
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  
+  .prev-celebrity {
+    left: 0;
+  }
+  
+  .next-celebrity {
+    right: 0;
+  }
+  
+  .celebrity-nav.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .celebrity-image {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+  
+  .celebrity-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .celebrity-card:hover .celebrity-image img {
+    transform: scale(1.05);
+  }
+  
+  .celebrity-info {
+    padding: 15px;
+    position: relative;
+  }
+  
+  .celebrity-info .rank {
+    font-weight: bold;
+    color: #444;
+  }
+  
+  .celebrity-info .trend {
+    margin-left: 10px;
+    font-size: 0.9em;
+  }
+  
+  .celebrity-info .trend.up {
+    color: #28a745;
+  }
+  
+  .celebrity-info h3 {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 768px) {
+    .celebrities-container {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+  
+    .section-header h2 {
+      font-size: 1.5rem;
+    }
+  
+    .celebrity-info h3 {
+      font-size: 1rem;
+    }
+  }
+
+  /* Enhanced Movie Section Styles */
+  .movie-section {
+    padding: 4rem 5%;
+    background-color: var(--background-light);
+    position: relative;
+  }
+  
+  .movie-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  .movie-header h2 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .movie-header .movie-intro {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  .movie-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  .movie-video {
+    flex: 1.2;
+    min-width: 45%;
+  }
+
+  .movie-video h1 {
+    margin-top : 30px;
+    margin-left : 20px;
+  }
+  
+  .movie-video iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+  }
+  
+  .movie-video iframe:hover {
+    transform: scale(1.02);
+  }
+  
+  .movie-description {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+  }
+  
+  .movie-reviews {
+    flex: 0.8;
+    min-width: 45%;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+  
+  .reviews h3,
+  .add-review h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+  }
+  
+  .review-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+  
+  .review-list::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .review-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+  
+  .review-list::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+
+  
+  .review-list {
+    scrollbar-width: thin;
+    scrollbar-color: var(--background-light) rgba(255, 255, 255, 0.1);
+  }
+  
+  .review-list li {
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .review-list li:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .review-list li strong {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .review-input {
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    resize: vertical;
+    min-height: 50px;
+    width : 100%;
+    margin-bottom: 1.2rem;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .review-input:focus {
+    outline: none;
+    border-color: var(--accent-hover-color);
+    box-shadow: 0 0 0 3px rgba(var(--accent-color-rgb), 0.2);
+  }
+  
+  .review-button {
+    padding: 0.5rem 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--accent-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .review-button:hover {
+    box-shadow: 0 4px 12px rgba(var(--accent-color-rgb), 0.3);
+    background-color: rgba(229, 9, 20, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  @media (max-width: 768px) {
+    .movie-section {
+      padding: 3rem 1rem;
+    }
+  
+    .movie-content {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  
+    .movie-video iframe {
+      height: 300px;
+    }
+  
+    .movie-reviews {
+      padding: 1.5rem;
+    }
+  
+    .movie-header h2 {
+      font-size: 2rem;
+    }
+  
+    .movie-header .movie-intro {
+      font-size: 1.1rem;
+    }
+  }
+  
